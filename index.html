@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --red: #991b1b;
+            --green: #86efac;
+            --stone: #ebe7e4;
+        }
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        #container {
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+        }
+        #sidebar {
+            background-color: var(--red);
+            grid-row: span 2;
+            color:white;
+            padding: 5px 15px;
+            height:100vh;
+        }
+        #sidebar ul li, #sidebar a {
+            list-style-type: none;
+            padding: 10px 0;
+            margin: 0;
+            color: white;
+            text-decoration: none;
+        }
+        #sidebar ul {
+            padding:0;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom:30px;
+        }
+        #header {
+            background-color: #fff;
+            padding: 5px;
+        }
+        #top, .welcome {
+            display: flex;
+        }
+        .alert, .user, #header button {
+            flex-basis: content;
+        }
+        .search, .welcome h2 {
+            flex-grow: 1;
+        }
+        .search input {
+            width: calc(100% - 22px);
+            height:20px;;
+            margin:10px;
+            border-radius: 10px;
+            border: 1px solid grey;
+        }
+        #main-content {
+            background-color: var(--stone);
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+        #projects {
+            grid-row: span 2;
+        }
+        #projects, #announcements, #trending {
+            padding: 20px;
+        }
+        .whitebox {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+        }
+        #cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        #sidebar img {
+            width: 23px;
+            filter: invert(96%) sepia(100%) saturate(0%) hue-rotate(131deg) brightness(102%) contrast(102%);
+            margin-right: 10px;
+            position: relative;
+            top:5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="sidebar">
+            <h1><img src="icons/view-dashboard.svg" alt="" /> Dashboard</h1>
+            <ul>
+                <li><a href=""><img src="icons/home.svg" alt="" />Home</a></li>
+                <li><a href=""><img src="icons/apps.svg" alt="" />Apps</a></li>
+                <li><a href=""><img src="icons/file-outline.svg" alt="" />Pages</a></li>
+                <li><a href=""><img src="icons/folder.svg" alt="" />Folders</a></li>
+                <li><a href=""><img src="icons/alert-circle.svg" alt="" />Warnings</a></li>
+            </ul>
+            <ul>
+                <li><a href=""><img src="icons/cog.svg" alt="">Settings</img></a></li>
+                <li><a href=""><img src="icons/power.svg" alt="">Power</img></a></li>
+
+            </ul>
+        </div>
+        <div id="header">
+            <div id="top">
+                <div class="search"><input type="text"></div>
+                <div class="alert">Icon</div>
+                <div class="user">Image and Morgan Oakley</div>
+            </div>
+            <div class="welcome">
+                <h2>Hi there, Morgan Oakley (@morgan)</h2>
+                <button>Button 1</button><button>Button 2</button><button>Button 3</button>
+            </div>
+        </div>
+        <div id="main-content">
+            <div id="projects">
+                <h3>Your projects</h3>
+                <div id="cards-grid">
+                    <div class="cards whitebox">
+                        <h4>Title 1</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate debitis at natus neque unde provident explicabo quam blanditiis dolor, sunt magni fuga enim ut ea libero! Cupiditate voluptatum beatae quisquam!</p>
+                    </div>
+                    <div class="cards whitebox">
+                        <h4>Title 2</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate debitis at natus neque unde provident explicabo quam blanditiis dolor, sunt magni fuga enim ut ea libero! Cupiditate voluptatum beatae quisquam!</p>
+
+                    </div>
+                    <div class="cards whitebox">
+                        <h4>Title 3</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate debitis at natus neque unde provident explicabo quam blanditiis dolor, sunt magni fuga enim ut ea libero! Cupiditate voluptatum beatae quisquam!</p>
+
+                    </div>
+                    <div class="cards whitebox">
+                        <h4>Title 4</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate debitis at natus neque unde provident explicabo quam blanditiis dolor, sunt magni fuga enim ut ea libero! Cupiditate voluptatum beatae quisquam!</p>
+
+                    </div>
+                    <div class="cards whitebox">
+                        <h4>Title 5</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate debitis at natus neque unde provident explicabo quam blanditiis dolor, sunt magni fuga enim ut ea libero! Cupiditate voluptatum beatae quisquam!</p>
+
+                    </div>
+                    <div class="cards whitebox">
+                        <h4>Title 6</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate debitis at natus neque unde provident explicabo quam blanditiis dolor, sunt magni fuga enim ut ea libero! Cupiditate voluptatum beatae quisquam!</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="announcements">
+                <h3>Announcements</h3>
+                <div class="whitebox">
+                    <h4>Announcement 1</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, eveniet?</p>
+                    <h4>Announcement 2</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, eveniet?</p>
+                    <h4>Announcement 3</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, eveniet?</p>
+                </div>
+            </div>
+
+            <div id="trending">
+                <h3>Trending</h3>
+                <div class="whitebox">
+                    <p>Trend 1</p>
+                    <p>Trend 2</p>
+                    <p>Trend 3</p>
+                    <p>Trend 4</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
