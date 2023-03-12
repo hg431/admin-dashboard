@@ -11,16 +11,10 @@
     <style>
         :root {
             --red: #991b1b;
+            --redhover:#5f1010;
             --green: #86efac;
             --stone: #ebe7e4;
         }
-        h1 {
-            font-size: 2em;
-            margin-block: 0;
-            margin-inline: 0;
-            padding:15px;
-        }
-
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
@@ -28,56 +22,130 @@
         #container {
             display: grid;
             grid-template-columns: 1fr 4fr;
+            grid-template-rows: 190px auto;
         }
+        /* SIDEBAR */
         #sidebar {
             background-color: var(--red);
             grid-row: span 2;
             color:white;
-            padding: 5px 0;
+            padding: 0;
             height:100vh;
         }
-        #sidebar ul li, #sidebar a {
+        #sidebar h1 {
+            font-size: 2em;
+            margin-block: 0;
+            margin-inline: 0;
+            padding:15px;
+            margin-bottom:15px;
+        }
+        #sidebar ul, #sidebar ul li, #sidebar ul li a {
             list-style-type: none;
             padding: 0;
             margin: 0;
+            font-size: 1.1rem;
+            font-weight: bold;
             color: white;
             text-decoration: none;
         }
-        #sidebar a {
-            margin: 0;
+        #sidebar ul li a {
             padding:10px 15px 15px 15px;
             display: block;
             width: 100%;
         }
-        #sidebar a:hover {
-            background-color: rgba(0, 0, 0, 0.2);
+        #sidebar ul li a:hover {
+            background-color: var(--redhover);
         }
         #sidebar ul {
-            padding:0;
-            font-size: 1.1rem;
-            font-weight: bold;
             margin-bottom:30px;
         }
+        #sidebar img {
+            width: 23px;
+            filter: invert(96%) sepia(100%) saturate(0%) hue-rotate(131deg) brightness(102%) contrast(102%);
+            margin-right: 15px;
+            position: relative;
+            top:5px;
+        }
+        #sidebar h1 img {
+            width: 30px;
+        }
+        .credits {
+            position:absolute;
+            bottom:10px;
+            left:10px;
+            opacity: 0.5;
+        }
+        .credits, .credits a, .credits a:hover {
+            font-size:0.7rem;
+            text-decoration: none;
+            color:white;
+        }
+        /* END OF SIDEBAR */
+
+        /* HEADER */
         #header {
             background-color: #fff;
-            padding: 5px;
+            padding: 15px;
         }
         #top, .welcome {
             display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        .alert, .user, #header button {
-            flex-basis: content;
+        #header #top #alert img {
+            width: 20px;
+            margin: 10px;
         }
-        .search, .welcome h2 {
+        #header #top #alert:hover, #header #top a.user:hover {
+            background-color: var(--stone);
+            border-radius: 15px;
+        }
+        #search, .welcome h2 {
             flex-grow: 1;
         }
-        .search input {
-            width: calc(100% - 22px);
-            height:20px;;
+        #search input {
+            width: calc(100% - 54px);
+            height:25px;
             margin:10px;
-            border-radius: 10px;
+            border-radius: 15px;
             border: 1px solid grey;
+            background-color: var(--stone);
+            background-image: url('icons/magnify.svg');
+            background-repeat: no-repeat;
+            background-position-x: 5px;
+            padding-left: 30px;
         }
+        #header #top a.user {
+            font-weight: bold;
+            font-size:1.2rem;
+            display: flex;
+            align-items: center;
+            color:black;
+            text-decoration: none;
+            padding-right:10px;
+        }
+        #header h2 {
+            margin:0;
+            display: flex;
+            align-items: center;
+        }
+        #header .welcome button {
+            background-color: var(--red);
+            font-size:1.2rem;
+            color: white;
+            border-radius: 15px;
+            border:0;
+            height:40px;
+            padding:0 30px;
+            font-family: inherit;
+        }
+        #header .welcome button:hover {
+            background-color: var(--redhover);
+            cursor: pointer;
+        }
+        /* END OF HEADER */
+
+        /* MAIN CONTENT */
         #main-content {
             background-color: var(--stone);
             display: grid;
@@ -94,22 +162,15 @@
             background-color: white;
             border-radius: 10px;
             box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-
         }
         #cards-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
         }
-        #sidebar img {
-            width: 23px;
-            filter: invert(96%) sepia(100%) saturate(0%) hue-rotate(131deg) brightness(102%) contrast(102%);
-            margin-right: 15px;
-            position: relative;
-            top:5px;
-        }
-        #sidebar h1 img {
-            width: 30px;
+        #cards-grid .whitebox {
+            border-left:8px solid var(--green);
+            padding:0 20px;
         }
     </style>
 </head>
@@ -118,27 +179,27 @@
         <div id="sidebar">
             <h1><img src="icons/view-dashboard.svg" alt="" />Dashboard</h1>
             <ul>
-                <li><a href=""><img src="icons/home.svg" alt="" />Home</a></li>
-                <li><a href=""><img src="icons/apps.svg" alt="" />Apps</a></li>
-                <li><a href=""><img src="icons/file-outline.svg" alt="" />Pages</a></li>
-                <li><a href=""><img src="icons/folder.svg" alt="" />Folders</a></li>
-                <li><a href=""><img src="icons/alert-circle.svg" alt="" />Warnings</a></li>
+                <li><a href=""><img src="icons/home.svg" alt="Home" />Home</a></li>
+                <li><a href=""><img src="icons/apps.svg" alt="Apps" />Apps</a></li>
+                <li><a href=""><img src="icons/file-outline.svg" alt="Pages" />Pages</a></li>
+                <li><a href=""><img src="icons/folder.svg" alt="Folders" />Folders</a></li>
+                <li><a href=""><img src="icons/alert-circle.svg" alt="Warnings" />Warnings</a></li>
             </ul>
             <ul>
-                <li><a href=""><img src="icons/cog.svg" alt="">Settings</img></a></li>
-                <li><a href=""><img src="icons/power.svg" alt="">Power</img></a></li>
-
+                <li><a href=""><img src="icons/cog.svg" alt="Settings">Settings</img></a></li>
+                <li><a href=""><img src="icons/power.svg" alt="Power">Power</img></a></li>
             </ul>
+            <span class="credits"><a target="_blank" href="https://icons8.com/icon/108652/user">User</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></span>
         </div>
         <div id="header">
             <div id="top">
-                <div class="search"><input type="text"></div>
-                <div class="alert">Icon</div>
-                <div class="user">Image and Morgan Oakley</div>
+                <div id="search"><input type="text"></div>
+                <a href="" id="alert"><img src="icons/bell-badge.svg" alt="" /></a>
+                <a href="" class="user"><img src="icons/user-50.png" alt="">Morgan Oakley</a>
             </div>
             <div class="welcome">
-                <h2>Hi there, Morgan Oakley (@morgan)</h2>
-                <button>Button 1</button><button>Button 2</button><button>Button 3</button>
+                <h2><img src="icons/user-100.png" alt="" />Hi there, Morgan Oakley (@morgan)</h2>
+                <button>New</button><button>Upload</button><button>Share</button>
             </div>
         </div>
         <div id="main-content">
