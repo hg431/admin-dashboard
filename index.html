@@ -171,6 +171,41 @@
         #cards-grid .whitebox {
             border-left:8px solid var(--green);
             padding:0 20px;
+            transition:0.5s;
+        }
+        #cards-grid .whitebox a img {
+            width: 25px;
+        }
+        #cards-grid .whitebox .controls {
+            display:flex;
+            justify-content: flex-end;
+            gap:10px;
+            padding-bottom:15px;
+        }
+        #cards-grid .whitebox:hover {
+            background-color: var(--stone);
+            transition: 0.5s;
+        }
+        #announcements .whitebox {
+            padding:20px;
+        }
+        #announcements .whitebox *:nth-last-child(odd):not(:last-child) {
+            padding-bottom:25px;
+            border-bottom: 1px var(--stone) solid;
+        }
+        #trending .whitebox {
+            display: flex;
+            flex-direction: column;
+            padding:10px 20px;
+        }
+        #trending .whitebox a.user {
+            align-items: center;
+            display: flex;
+            text-decoration: none;
+            color:inherit;
+        }
+        #main-content #trending h3 {
+            margin-top:0;
         }
     </style>
 </head>
@@ -209,31 +244,57 @@
                     <div class="cards whitebox">
                         <h4>Title 1</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate debitis at natus neque unde provident explicabo quam blanditiis dolor, sunt magni fuga enim ut ea libero! Cupiditate voluptatum beatae quisquam!</p>
+                        
+                        <div class="controls">
+                            <a href=""><img src="icons/star-outline.svg" alt=""></a>
+                            <a href=""><img src="icons/eye-outline.svg" alt=""></a>
+                            <a href=""><img src="icons/trash-can-outline.svg" alt=""></a>
+                        </div>
                     </div>
                     <div class="cards whitebox">
                         <h4>Title 2</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate debitis at natus neque unde provident explicabo quam blanditiis dolor, sunt magni fuga enim ut ea libero! Cupiditate voluptatum beatae quisquam!</p>
-
+                        <div class="controls">
+                            <a href=""><img src="icons/star-outline.svg" alt=""></a>
+                            <a href=""><img src="icons/eye-outline.svg" alt=""></a>
+                            <a href=""><img src="icons/trash-can-outline.svg" alt=""></a>
+                        </div>
                     </div>
                     <div class="cards whitebox">
                         <h4>Title 3</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate debitis at natus neque unde provident explicabo quam blanditiis dolor, sunt magni fuga enim ut ea libero! Cupiditate voluptatum beatae quisquam!</p>
-
+                        <div class="controls">
+                            <a href=""><img src="icons/star-outline.svg" alt=""></a>
+                            <a href=""><img src="icons/eye-outline.svg" alt=""></a>
+                            <a href=""><img src="icons/trash-can-outline.svg" alt=""></a>
+                        </div>
                     </div>
                     <div class="cards whitebox">
                         <h4>Title 4</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate debitis at natus neque unde provident explicabo quam blanditiis dolor, sunt magni fuga enim ut ea libero! Cupiditate voluptatum beatae quisquam!</p>
-
+                        <div class="controls">
+                            <a href=""><img src="icons/star-outline.svg" alt=""></a>
+                            <a href=""><img src="icons/eye-outline.svg" alt=""></a>
+                            <a href=""><img src="icons/trash-can-outline.svg" alt=""></a>
+                        </div>
                     </div>
                     <div class="cards whitebox">
                         <h4>Title 5</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate debitis at natus neque unde provident explicabo quam blanditiis dolor, sunt magni fuga enim ut ea libero! Cupiditate voluptatum beatae quisquam!</p>
-
+                        <div class="controls">
+                            <a href=""><img src="icons/star-outline.svg" alt=""></a>
+                            <a href=""><img src="icons/eye-outline.svg" alt=""></a>
+                            <a href=""><img src="icons/trash-can-outline.svg" alt=""></a>
+                        </div>
                     </div>
                     <div class="cards whitebox">
                         <h4>Title 6</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate debitis at natus neque unde provident explicabo quam blanditiis dolor, sunt magni fuga enim ut ea libero! Cupiditate voluptatum beatae quisquam!</p>
-
+                        <div class="controls">
+                            <a href=""><img src="icons/star-outline.svg" alt=""></a>
+                            <a href=""><img src="icons/eye-outline.svg" alt=""></a>
+                            <a href=""><img src="icons/trash-can-outline.svg" alt=""></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -253,10 +314,10 @@
             <div id="trending">
                 <h3>Trending</h3>
                 <div class="whitebox">
-                    <p>Trend 1</p>
-                    <p>Trend 2</p>
-                    <p>Trend 3</p>
-                    <p>Trend 4</p>
+                    <a href="" class="user"><img src="icons/user-50.png" alt="">Morgan Oakley</a>
+                    <a href="" class="user"><img src="icons/user-50.png" alt="">Morgan Oakley</a>
+                    <a href="" class="user"><img src="icons/user-50.png" alt="">Morgan Oakley</a>
+                    <a href="" class="user"><img src="icons/user-50.png" alt="">Morgan Oakley</a>
                 </div>
             </div>
         </div>
