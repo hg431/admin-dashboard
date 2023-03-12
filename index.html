@@ -14,6 +14,13 @@
             --green: #86efac;
             --stone: #ebe7e4;
         }
+        h1 {
+            font-size: 2em;
+            margin-block: 0;
+            margin-inline: 0;
+            padding:15px;
+        }
+
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
@@ -26,15 +33,24 @@
             background-color: var(--red);
             grid-row: span 2;
             color:white;
-            padding: 5px 15px;
+            padding: 5px 0;
             height:100vh;
         }
         #sidebar ul li, #sidebar a {
             list-style-type: none;
-            padding: 10px 0;
+            padding: 0;
             margin: 0;
             color: white;
             text-decoration: none;
+        }
+        #sidebar a {
+            margin: 0;
+            padding:10px 15px 15px 15px;
+            display: block;
+            width: 100%;
+        }
+        #sidebar a:hover {
+            background-color: rgba(0, 0, 0, 0.2);
         }
         #sidebar ul {
             padding:0;
@@ -88,16 +104,19 @@
         #sidebar img {
             width: 23px;
             filter: invert(96%) sepia(100%) saturate(0%) hue-rotate(131deg) brightness(102%) contrast(102%);
-            margin-right: 10px;
+            margin-right: 15px;
             position: relative;
             top:5px;
+        }
+        #sidebar h1 img {
+            width: 30px;
         }
     </style>
 </head>
 <body>
     <div id="container">
         <div id="sidebar">
-            <h1><img src="icons/view-dashboard.svg" alt="" /> Dashboard</h1>
+            <h1><img src="icons/view-dashboard.svg" alt="" />Dashboard</h1>
             <ul>
                 <li><a href=""><img src="icons/home.svg" alt="" />Home</a></li>
                 <li><a href=""><img src="icons/apps.svg" alt="" />Apps</a></li>
