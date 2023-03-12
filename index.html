@@ -21,7 +21,7 @@
         }
         #container {
             display: grid;
-            grid-template-columns: minmax(200px, 300px) 1fr;
+            grid-template-columns: clamp(150px, 20%, 300px) 1fr;
             grid-template-rows: 190px auto;
         }
         /* SIDEBAR */
@@ -30,7 +30,7 @@
             grid-row: span 2;
             color:white;
             padding: 0;
-            height:100vh;
+            height:auto;
         }
         #sidebar h1 {
             font-size: 2em;
@@ -166,7 +166,7 @@
         }
         #cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
         #cards-grid .whitebox {
@@ -238,10 +238,10 @@
             <div id="top">
                 <div id="search"><input type="text"></div>
                 <a href="" id="alert"><img src="icons/bell-badge.svg" alt="" /></a>
-                <a href="" class="user"><img src="icons/user-50.png" alt="">Morgan Oakley</a>
+                <a href="" class="user"><img src="icons/user-50.png" alt="">Chris David</a>
             </div>
             <div class="welcome">
-                <h2><img src="icons/user-100.png" alt="" />Hi there, Morgan Oakley (@morgan)</h2>
+                <h2><img src="icons/user-100.png" alt="" />Hi there, Chris (@morgan)</h2>
                 <button>New</button><button>Upload</button><button>Share</button>
             </div>
         </div>
