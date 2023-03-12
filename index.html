@@ -12,7 +12,7 @@
         :root {
             --red: #991b1b;
             --redhover:#5f1010;
-            --green: #86efac;
+            --green:#78716c;
             --stone: #ebe7e4;
         }
         body {
@@ -30,10 +30,10 @@
             grid-row: span 2;
             color:white;
             padding: 0;
-            height:auto;
+            min-height: 100vh;
         }
         #sidebar h1 {
-            font-size: 2em;
+            font-size: 1.5rem;
             margin-block: 0;
             margin-inline: 0;
             padding:15px;
@@ -51,7 +51,6 @@
         #sidebar ul li a {
             padding:10px 15px 15px 15px;
             display: block;
-            width: 100%;
         }
         #sidebar ul li a:hover {
             background-color: var(--redhover);
@@ -70,7 +69,7 @@
             width: 30px;
         }
         .credits {
-            position:absolute;
+            position:fixed;
             bottom:10px;
             left:10px;
             opacity: 0.5;
@@ -79,6 +78,10 @@
             font-size:0.7rem;
             text-decoration: none;
             color:white;
+        }
+        #fixed {
+            position:fixed;
+            width:clamp(150px, 20%, 300px);
         }
         /* END OF SIDEBAR */
 
@@ -150,8 +153,9 @@
             background-color: var(--stone);
             display: grid;
             grid-template-columns: 3fr 1fr;
-            grid-template-rows: 1fr 1fr;
+            grid-template-rows: min-content 1fr;
             box-shadow: inset 0px 15px 14px -14px rgba(60, 64, 67, 0.3);
+            align-items:start;
         }
         #projects {
             grid-row: span 2;
@@ -220,19 +224,21 @@
 <body>
     <div id="container">
         <div id="sidebar">
-            <h1><img src="icons/view-dashboard.svg" alt="" />Dashboard</h1>
-            <ul>
-                <li><a href=""><img src="icons/home.svg" alt="Home" />Home</a></li>
-                <li><a href=""><img src="icons/apps.svg" alt="Apps" />Apps</a></li>
-                <li><a href=""><img src="icons/file-outline.svg" alt="Pages" />Pages</a></li>
-                <li><a href=""><img src="icons/folder.svg" alt="Folders" />Folders</a></li>
-                <li><a href=""><img src="icons/alert-circle.svg" alt="Warnings" />Warnings</a></li>
-            </ul>
-            <ul>
-                <li><a href=""><img src="icons/cog.svg" alt="Settings">Settings</img></a></li>
-                <li><a href=""><img src="icons/power.svg" alt="Power">Power</img></a></li>
-            </ul>
-            <span class="credits"><a target="_blank" href="https://icons8.com/icon/108652/user">User</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></span>
+            <div id="fixed">
+                <h1><img src="icons/view-dashboard.svg" alt="" />Dashboard</h1>
+                <ul>
+                    <li><a href=""><img src="icons/home.svg" alt="Home" />Home</a></li>
+                    <li><a href=""><img src="icons/apps.svg" alt="Apps" />Apps</a></li>
+                    <li><a href=""><img src="icons/file-outline.svg" alt="Pages" />Pages</a></li>
+                    <li><a href=""><img src="icons/folder.svg" alt="Folders" />Folders</a></li>
+                    <li><a href=""><img src="icons/alert-circle.svg" alt="Warnings" />Warnings</a></li>
+                </ul>
+                <ul>
+                    <li><a href=""><img src="icons/cog.svg" alt="Settings">Settings</img></a></li>
+                    <li><a href=""><img src="icons/power.svg" alt="Power">Power</img></a></li>
+                </ul>
+                <span class="credits"><a target="_blank" href="https://icons8.com/icon/108652/user">User</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></span>
+            </div>
         </div>
         <div id="header">
             <div id="top">
